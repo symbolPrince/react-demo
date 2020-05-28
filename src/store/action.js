@@ -12,3 +12,10 @@ export const add=(data)=>{
     data:data
   }
 }
+
+export const del=(data)=>{
+  return{
+    type:'DEL',
+    data
+  }
+}

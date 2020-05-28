@@ -11,6 +11,7 @@ import React, { Component } from "react";
 import { Button } from "antd";
 import Phone from "./Phone";
 import New from "./New";
+import Reduex from './Redux'
 import 'antd/dist/antd.css';
 import {store} from '../redux/index'
 import {changeData} from '../redux/actions'
@@ -59,6 +60,7 @@ class Home extends Component {
         <Button type='primary' onClick={this.fun}>点击改变home的值</Button>
         <div>{this.state.storeData}</div>
         <Button type='primary' onClick={()=>{store.dispatch(changeData('很好'))}}>redux</Button>
+        <Reduex></Reduex>
       </div>
     );
   }
