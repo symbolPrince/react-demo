@@ -1,7 +1,18 @@
+/*
+ * @Descripttion:
+ * @version: 3.0
+ * @Author: symbolSong
+ * @Date: 2020-05-26 10:03:44
+ * @LastEditors: symbolSong
+ * @LastEditTime: 2020-05-29 17:33:41
+ */
+
 import React from "react";
 import "./App.css";
-import Home from './demo/Home'
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
+// import Home from "./demo/Home";
+// import Parent from './demo/Parent'
+
 
 
 function App() {
@@ -21,8 +32,9 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <div className="App">
-        <Home/>
+      <div>
+        {/* <Home />
+        <Parent></Parent> */}
       </div>
     </div>
   );
