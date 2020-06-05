@@ -8,7 +8,9 @@
  */ 
 import React, { Component } from "react";
 import Pubsub from "pubsub-js";
+import ThemeContext from './Home'
 class New extends Component {
+  static contextType =ThemeContext
   constructor(props) {
     super(props);
 
@@ -17,6 +19,7 @@ class New extends Component {
     };
   }
   componentDidMount() {
+    console.log(this.context)
     Pubsub.subscribe("evt", (msg, data) => {
       this.setState({
         data,

@@ -6,6 +6,11 @@
  * @LastEditors: symbolSong
  * @LastEditTime: 2020-05-28 17:18:54
  */ 
-import {createStore} from 'redux'
+import {createStore,applyMiddleware} from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import helloSaga from '../saga/sagas'
 import {data} from './reducer'
-export const store = createStore(data)
+const sagaMiddleware =createSagaMiddleware();
+export const store = createStore(data,applyMiddleware(sagaMiddleware))
+
+sagaMiddleware.run(helloSaga)

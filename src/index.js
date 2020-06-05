@@ -10,12 +10,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Nav from './Nav/Nav'
+// import Nav from './Nav/Nav'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   // <React.StrictMode></React.StrictMode>
-    <Nav />
+    <App />
   ,
   document.getElementById('root')
 );

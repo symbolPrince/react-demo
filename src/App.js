@@ -7,37 +7,43 @@
  * @LastEditTime: 2020-05-29 17:33:41
  */
 
-import React from "react";
+// import React from "react";
+import React, { Component } from 'react'
 import "./App.css";
 import "antd/dist/antd.css";
 // import Home from "./demo/Home";
+import ContextFa from './demo/ContextFa'
 // import Parent from './demo/Parent'
-
-
-
-function App() {
-  return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+import PropTypes from 'prop-types'
+// function App() {
+//   return (
+//     <div className="App">
+//       <div>
+//          {/* <Home />
+//         <Parent></Parent> */}
+//         <ContextFa></ContextFa>
+//       </div>
+//     </div>
+//   );
+// }
+class App extends Component {
+  static childContextTypes={
+    name:PropTypes.string
+  }
+  state={
+    name:'contex'
+  }
+  getChildContext(){
+    return {name:this.state.name}
+  }
+  render() {
+    return (
       <div>
-        {/* <Home />
-        <Parent></Parent> */}
+        这是爷爷组件
+        <ContextFa/>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default App
