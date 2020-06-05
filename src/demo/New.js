@@ -1,14 +1,18 @@
 /*
- * @Descripttion: 
+ * @Descripttion:
  * @version: 3.0
  * @Author: symbolSong
  * @Date: 2020-05-26 13:47:45
  * @LastEditors: symbolSong
  * @LastEditTime: 2020-05-28 15:00:15
- */ 
+ */
+
 import React, { Component } from "react";
 import Pubsub from "pubsub-js";
 import ThemeContext from './Home'
+import { Route, NavLink } from "react-router-dom";
+import Homea from "./home/homea";
+import Homeb from "./home/homeb";
 class New extends Component {
   static contextType =ThemeContext
   constructor(props) {
@@ -20,6 +24,10 @@ class New extends Component {
   }
   componentDidMount() {
     console.log(this.context)
+    // this.props.history.listen((link)=>{
+    //   console.log(link)
+    // })
+    console.log(this.props.match.params.id);
     Pubsub.subscribe("evt", (msg, data) => {
       this.setState({
         data,
@@ -34,7 +42,16 @@ class New extends Component {
   //   });
   // }
   render() {
-    return <div>News---{this.state.data}</div>;
+    return (
+      <div>
+        <p>News---{this.state.data}</p>
+        {/* <Button onClick={()=>{let that=this;that.props.history.push('/home')}}>编程跳转</Button> */}
+        <NavLink to="/new/homea">homea</NavLink>
+        <NavLink to="/new/homb">homeb</NavLink>
+        <Route path="/new/homea" component={Homea}></Route>
+        <Route path="/new/homeb" component={Homeb}></Route>
+      </div>
+    );
   }
 }
 

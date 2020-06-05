@@ -21,6 +21,7 @@ export default class componentName extends Component {
     };
   }
   componentDidMount() {
+    console.log(this.props.location.query)
     store.subscribe(() => {
       this.setState({
         arr: store.getState()
