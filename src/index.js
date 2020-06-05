@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Nav from './Nav/Nav'
+// import Nav from './Nav/Nav'
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter} from 'react-router-dom'
 

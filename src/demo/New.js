@@ -9,10 +9,12 @@
 
 import React, { Component } from "react";
 import Pubsub from "pubsub-js";
+import ThemeContext from './Home'
 import { Route, NavLink } from "react-router-dom";
 import Homea from "./home/homea";
 import Homeb from "./home/homeb";
 class New extends Component {
+  static contextType =ThemeContext
   constructor(props) {
     super(props);
 
@@ -21,6 +23,7 @@ class New extends Component {
     };
   }
   componentDidMount() {
+    console.log(this.context)
     // this.props.history.listen((link)=>{
     //   console.log(link)
     // })

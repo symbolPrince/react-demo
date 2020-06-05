@@ -7,7 +7,8 @@
  * @LastEditTime: 2020-05-29 17:33:41
  */
 
-import React from "react";
+// import React from "react";
+import React, { Component } from 'react'
 import "./App.css";
 import Home from "./demo/Home";
 import New from "./demo/New";
@@ -17,6 +18,7 @@ import {Button} from 'antd'
 import { Route, NavLink, Switch, Redirect, withRouter} from "react-router-dom";
 import "antd/dist/antd.css";
 // import Home from "./demo/Home";
+// import ContextFa from './demo/ContextFa'
 // import Parent from './demo/Parent'
 
 function App(props) {
@@ -24,21 +26,6 @@ function App(props) {
     console.log(link)
   })
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
       <div className="App">
         <div>
           <NavLink to="/home">home</NavLink>
@@ -56,8 +43,7 @@ function App(props) {
           <Redirect from="/" to="/home" exact></Redirect>
         </Switch>
       </div>
-    </div>
-  );
-}
+    )
+  }
 
 export default withRouter(App);
