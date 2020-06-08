@@ -23,11 +23,11 @@ class Phone extends Component {
     }
     render() {
         return (
-            <div>y
+            <div>
                 phone
                 <div>{this.props.data}</div>
-                <Button type='primary' onClick={this.props.fun.bind(this,this.state.data)}>phone组件传值</Button>
-                <Button type='primary' onClick={this.fun.bind(this)}>点击向news中传值</Button>
+                {/* <Button type='primary' onClick={this.props.fun.bind(this,this.state.data)}>phone组件传值</Button> */}
+                {/* <Button type='primary' onClick={this.fun.bind(this)}>点击向news中传值</Button> */}
             </div>
         )
     }

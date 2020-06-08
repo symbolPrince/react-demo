@@ -8,9 +8,9 @@
  */ 
 import {createStore,applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import helloSaga from '../saga/sagas'
+// import helloSaga from '../saga/sagas'
 import {data} from './reducer'
 const sagaMiddleware =createSagaMiddleware();
 export const store = createStore(data,applyMiddleware(sagaMiddleware))
 
-sagaMiddleware.run(helloSaga)
+// sagaMiddleware.run(helloSaga)
