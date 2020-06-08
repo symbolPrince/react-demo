@@ -17,6 +17,9 @@ import React, { Component } from "react";
 import "antd/dist/antd.css";
 import logo from "../logo.svg";
 import "./Navi.css";
+import router from "../router/index";
+import { Route, NavLink, Switch } from "react-router-dom";
+import User from "../demo/User";
 const { Header, Content, Footer, Sider } = Layout;
 
 class Nav extends Component {
@@ -38,13 +41,19 @@ class Nav extends Component {
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<AppstoreOutlined />}>
-              <span className="nav-text">nav 1</span>
+            <span className="nav-text"> 
+                <NavLink to='/home'>home</NavLink>
+              </span>
             </Menu.Item>
             <Menu.Item key="2" icon={<MailOutlined />}>
-              <span className="nav-text">nav 2</span>
+              <span className="nav-text"> 
+                <NavLink to='/new'>new</NavLink>
+              </span>
             </Menu.Item>
             <Menu.Item key="3" icon={<SettingOutlined />}>
-              <span className="nav-text">nav 3</span>
+            <span className="nav-text"> 
+                <NavLink to='/phone'>phone</NavLink>
+              </span>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -74,9 +83,27 @@ class Nav extends Component {
               <Breadcrumb.Item>User</Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
-            <div
-              style={{ padding: 24, background: "#fff", minHeight: 780 }}
-            ></div>
+            <div style={{ padding: 24, background: "#fff", minHeight: 780 }}>
+              <Switch>
+                {router.map(
+                  ({ path, componentName, exact = true, routes = [] }, key) => {
+                    return (
+                      <Route
+                        exact={exact}
+                        key={key}
+                        path={path}
+                        component={componentName}
+                        // render={(props) => (
+                        //   //主要是为了传递嵌套路由到子组件
+                        //   //类似于 <User {...props} routes={routes} />
+                        //   <componentName {...props} routes={routes} />
+                        // )}
+                      />
+                    );
+                  }
+                )}
+              </Switch>
+            </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
             Ant Design ©2016 Created by Ant UED
